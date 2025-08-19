@@ -17,6 +17,9 @@ La API implementa operaciones CRUD sobre tópicos:
 - ✏️ **Actualizar un tópico**
 - 🗑 **Eliminar un tópico**
 
+<img width="1254" height="643" alt="imagen" src="https://github.com/user-attachments/assets/98fdaf98-06b3-4b8a-ac8a-1c2083da8f45" />
+
+
 Además:
 
 - ✅ Validaciones según reglas de negocio.  
