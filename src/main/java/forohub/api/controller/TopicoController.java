@@ -1,9 +1,6 @@
 package forohub.api.controller;
 
-import forohub.api.topico.DatosListaTopico;
-import forohub.api.topico.DatosRegistroTopico;
-import forohub.api.topico.Topico;
-import forohub.api.topico.TopicoRepository;
+import forohub.api.topico.*;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -27,6 +24,20 @@ public class TopicoController {
 
     @GetMapping
     public Page<DatosListaTopico> listar(@PageableDefault(size = 10, sort = {"titulo"}) Pageable paginacion) {
-        return repository.findAll(paginacion).map(DatosListaTopico::new);
+        return repository.findAllByActivoTrue(paginacion).map(DatosListaTopico::new);
+    }
+
+    @Transactional
+    @PutMapping
+    public void actualizar(@RequestBody @Valid DatosActualizacionTopico datos) {
+        var medico = repository.getReferenceById(datos.id());
+        medico.actualizarInformaciones(datos);
+    }
+
+    @Transactional
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable Long id) {
+        var medico = repository.getReferenceById(id);
+        medico.eliminar();
     }
 }

@@ -1,10 +1,12 @@
 package forohub.api.topico;
 
+import java.time.LocalDate;
+
 public record DatosListaTopico(
         Long id,
         String titulo,
         String mensaje,
-        String fechaDeCreacion
+        LocalDate fechaDeCreacion
 ) {
     public DatosListaTopico(Topico topico) {
         this(topico.getId(), topico.getTitulo(), topico.getMensaje(), topico.getFechaDeCreacion());
