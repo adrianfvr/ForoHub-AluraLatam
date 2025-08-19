@@ -1,9 +1,12 @@
 package forohub.api.topico;
 
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 public record DatosRegistroTopico(
         String idUsuario,
-        String mensaje,
+        @NotBlank String mensaje,
         String nombreCurso,
-        String titulo
+        @NotNull @NotBlank String titulo
 ) {
 }
