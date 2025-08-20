@@ -17,7 +17,8 @@ La API implementa operaciones CRUD sobre tópicos:
 - ✏️ **Actualizar un tópico**
 - 🗑 **Eliminar un tópico**
 
-<img width="1254" height="643" alt="imagen" src="https://github.com/user-attachments/assets/98fdaf98-06b3-4b8a-ac8a-1c2083da8f45" />
+<img width="248" height="249" alt="imagen" src="https://github.com/user-attachments/assets/46e4e9ff-bf77-482f-8a0d-8b2388fbb50d" />
+
 
 
 Además:
@@ -101,10 +102,20 @@ Se implementa seguridad con **Spring Security** y **JWT**.
    }
    ```
 2. Si son válidas, el sistema responde con un **token JWT**.
-3. Para acceder a los endpoints protegidos, incluir el token en el **header Authorization**:
+Ejemplo de credenciales no validas
+
+<img width="989" height="429" alt="imagen" src="https://github.com/user-attachments/assets/a50f96e2-c05a-48de-ba7e-2d1dca8ef018" />
+
+Ejemplo de credenciales validas
+
+<img width="941" height="470" alt="imagen" src="https://github.com/user-attachments/assets/e8e716f1-7bdf-4977-8705-6db29339ca65" />
+
+4. Para acceder a los endpoints protegidos, incluir el token en el **Auth Authorization**:
    ```
    Authorization: Bearer <tu_token_aquí>
    ```
+<img width="947" height="390" alt="imagen" src="https://github.com/user-attachments/assets/78d84999-5b43-4c8b-aeaf-152846acc52f" />
+
 
 ### Configuración clave:
 - Clase `SecurityConfigurations` con `HttpSecurity`.  
@@ -148,6 +159,15 @@ Se implementa seguridad con **Spring Security** y **JWT**.
 - **GET** `/topicos/{id}` → Consultar tópico por ID  
 - **PUT** `/topicos/{id}` → Actualizar tópico  
 - **DELETE** `/topicos/{id}` → Eliminar tópico  
+
+## PRUEBAS
+Sin el Token no muestra la informacion
+
+<img width="785" height="420" alt="imagen" src="https://github.com/user-attachments/assets/73c9bbad-76cc-464b-8c50-dc9bd41fab4a" />
+
+Con el Token SI nuestra el contenido
+
+<img width="934" height="481" alt="imagen" src="https://github.com/user-attachments/assets/1d1cfbda-a951-4791-847c-30882b6e8a67" />
 
 ---
 
