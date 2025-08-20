@@ -97,8 +97,8 @@ Se implementa seguridad con **Spring Security** y **JWT**.
 1. Enviar credenciales de usuario a `POST http://localhost:8080/login` con un JSON:
    ```json
    {
-     "username": "usuario",
-     "password": "contraseña"
+     "nombre": "usuario",
+     "contrasena": "contraseña"
    }
    ```
 2. Si son válidas, el sistema responde con un **token JWT**.
